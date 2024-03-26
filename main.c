@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void studentRecords();
-//void search();
+int search();
 //void add();
 //void deleteRecord();
 //void update();
@@ -13,14 +13,15 @@ int main()
     printf("STUDENT DATABASE MANAGEMENT\n");
     printf("---------------------------\n");
 
-    do{
+    printf("1.Student Records\n");
+    printf("2.Search for a student\n");
+    printf("3.Add a Student\n");
+    printf("4.Delete a Record\n");
+    printf("5.Update Student Details\n");
+    printf("6.Exit\n");
 
-        printf("1.Student Records\n");
-        printf("2.Search for a student\n");
-        printf("3.Add a Student\n");
-        printf("4.Delete a Record\n");
-        printf("5.Update Student Details\n");
-        printf("6.Exit\n");
+
+    do{
 
         printf("Enter your choice :\n");
         scanf("%u",&choice);
@@ -29,7 +30,7 @@ int main()
         {
             case 1:studentRecords();
             break;
-            case 2://search();
+            case 2:search();
             break;
             case 3://add();
             break;
@@ -44,23 +45,52 @@ int main()
     }while(choice!=6);
 }
 
+
 void studentRecords()
 {
-    //char name[50];
-    printf("\n\n");
-    puts("STUDENT RECORDS\n");
-    puts("---------------------------\n");
+    char name[]={'Anu','Asha','Ram'};
+    int reg_No[]={01,02,03};
+    char DOB[]={'12/02/2010','10/8/2010','6/6/2010'};
 
-    puts("1.Name of the student: Anu\n");
-    puts("  Roll No. :01\n");
-    puts("---------------------------\n");
+    for(int i=0;i<(sizeof(name)/sizeof(char));i++)
+    {
+                printf("Name of the student: %c\n",name[i]);
+                printf("Registration Number: %d\n",reg_No[i]);
+                printf("D.O.B : %c\n",name[i]);
+                printf("------------------------------------\n");
+    }
+}
 
-    puts("2.Name of the student: Asha\n");
-    puts("  Roll No. :02\n");
-    puts("---------------------------\n");
+int search(int r)
+{
+        printf("Enter Register Number of the student: \n");
+        scanf("%d\n",&r); //r is the register number
+        int reg_No[3];
+        char name[3],DOB[3];
 
-    puts("3.Name of the student: Ram\n");
-    puts("  Roll No. :03\n");
-    puts("---------------------------\n");
-
+        if(r==1)
+        {
+            studentRecords(0);
+            return name[0];
+            return reg_No[0];
+            return DOB[0];
+        }
+        else if(r==2)
+        {
+            studentRecords(1);
+            return name[1];
+            return reg_No[1];
+            return DOB[1];
+        }
+        else if(r==3)
+        {
+            studentRecords(2);
+            return name[2];
+            return reg_No[2];
+            return DOB[2];
+        }
+        else
+        {
+            printf("Enter a valid Register number\n");
+        }
 }
