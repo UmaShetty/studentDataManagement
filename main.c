@@ -45,52 +45,63 @@ int main()
     }while(choice!=6);
 }
 
-
 void studentRecords()
 {
-    char name[]={'Anu','Asha','Ram'};
-    int reg_No[]={01,02,03};
-    char DOB[]={'12/02/2010','10/8/2010','6/6/2010'};
 
-    for(int i=0;i<(sizeof(name)/sizeof(char));i++)
-    {
-                printf("Name of the student: %c\n",name[i]);
-                printf("Registration Number: %d\n",reg_No[i]);
-                printf("D.O.B : %c\n",name[i]);
-                printf("------------------------------------\n");
-    }
+    char name1[30], name2[30], name3[30];
+    strcpy(name1,"Anu");
+    strcpy(name2,"Asha");
+    strcpy(name3,"Ram");
+    int reg_No[]={01,02,03};
+    char DOB1[50],DOB2[50],DOB3[50];
+    strcpy(DOB1,"12/02/2010");
+    strcpy(DOB2,"10/8/2010");
+    strcpy(DOB3,"6/6/2010");
+
+    printf("Student 1:\n \n Name of the student: %s \n Registration NO: %d \n DOB : %s\n------------------\n",name1,reg_No[0],DOB1);
+    printf("Student 2:\n \n Name of the student: %s \n Registration NO: %d \n DOB : %s\n------------------\n",name2,reg_No[1],DOB2);
+    printf("Student 3:\n \n Name of the student: %s \n Registration NO: %d \n DOB : %s\n------------------\n",name3,reg_No[2],DOB3);
+
 }
+
 
 int search(int r)
 {
+        void studentRecords();
+        int reg_No[3];
+        char name1[50],name2[50],name3[50];
+        char DOB1[50],DOB2[50],DOB3[50];
+
         printf("Enter Register Number of the student: \n");
         scanf("%d\n",&r); //r is the register number
-        int reg_No[3];
-        char name[3],DOB[3];
 
-        if(r==1)
+        switch(r)
         {
-            studentRecords(0);
-            return name[0];
-            return reg_No[0];
-            return DOB[0];
+            if(r==1)
+            {
+                studentRecords();
+                printf("Student 1:\n \n Name of the student: %s \n Registration NO: %d \n DOB : %s\n------------------\n",name1,reg_No[0],DOB1);
+
+            }
+            else if(r==2)
+            {
+                studentRecords();
+                printf("Student 2:\n \n Name of the student: %s \n Registration NO: %d \n DOB : %s\n------------------\n",name2,reg_No[2],DOB2);
+
+            }
+            else if(r==3)
+            {
+                studentRecords();
+                printf("Student 3:\n \n Name of the student: %s \n Registration NO: %d \n DOB : %s\n------------------\n",name3,reg_No[2],DOB3);
+
+            }
+            else
+            {
+                printf("Enter a valid Register number\n");
+            }
+
+
         }
-        else if(r==2)
-        {
-            studentRecords(1);
-            return name[1];
-            return reg_No[1];
-            return DOB[1];
-        }
-        else if(r==3)
-        {
-            studentRecords(2);
-            return name[2];
-            return reg_No[2];
-            return DOB[2];
-        }
-        else
-        {
-            printf("Enter a valid Register number\n");
-        }
+
 }
+
