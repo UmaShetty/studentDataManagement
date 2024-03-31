@@ -1,12 +1,24 @@
 #include <stdio.h>
+#include <string.h>
+#pragma pack(1)
 
-void studentRecords();
-int search();
-//void add();
-//void deleteRecord();
-//void update();
+int viewRecord();
+int searchStudent();
+//void addStudent();
+//void deleteStudent();
+//void updateRecord();
 //void exit();
 
+struct student{
+    int sl_No; //serial number
+    char name[50]; //name of the student
+    int reg_no; //register number of the student
+    char branch[50];
+};
+
+struct student Student[15]={{1,"std_A",01,"CSE"},{2,"std_B",02,"CSE"},{3,"std_C",03,"ECE"},{4,"std_D",04,"CSE"},{5,"std_E",05,"ECE"},{6,"std_F",06,"CSE"},{7,"std_G",07,"ECE"},{0x8,"std_H",0x8,"CSE"},{0x9,"std_I",0x9,"CSE"},{0xA,"std_J",0xA,"EEE"},{0xB,"std_K",0xB,"ECE"},{0XC,"std_L",0xC,"CSE"},{0xD,"std_M",0xD,"ECE"},{0xE,"std_N",0xE,"ECE"},{0xF,"std_O",0xF,"CSE"}};
+
+//main function to display menu options
 int main()
 {
     int choice;
@@ -23,14 +35,14 @@ int main()
 
     do{
 
-        printf("Enter your choice :\n");
+        printf("\nEnter your choice :\n");
         scanf("%u",&choice);
 
         switch(choice)
         {
-            case 1:studentRecords();
+            case 1:viewRecord();
             break;
-            case 2:search();
+            case 2:searchStudent();
             break;
             case 3://add();
             break;
@@ -43,65 +55,36 @@ int main()
             default:printf("Invalid Choice.Please enter a valid option.\n");
         }
     }while(choice!=6);
-}
-
-void studentRecords()
-{
-
-    char name1[30], name2[30], name3[30];
-    strcpy(name1,"Anu");
-    strcpy(name2,"Asha");
-    strcpy(name3,"Ram");
-    int reg_No[]={01,02,03};
-    char DOB1[50],DOB2[50],DOB3[50];
-    strcpy(DOB1,"12/02/2010");
-    strcpy(DOB2,"10/8/2010");
-    strcpy(DOB3,"6/6/2010");
-
-    printf("Student 1:\n \n Name of the student: %s \n Registration NO: %d \n DOB : %s\n------------------\n",name1,reg_No[0],DOB1);
-    printf("Student 2:\n \n Name of the student: %s \n Registration NO: %d \n DOB : %s\n------------------\n",name2,reg_No[1],DOB2);
-    printf("Student 3:\n \n Name of the student: %s \n Registration NO: %d \n DOB : %s\n------------------\n",name3,reg_No[2],DOB3);
-
+    return 0;
 }
 
 
-int search(int r)
+//user defined function to view details of all the students
+int viewRecord()
 {
-        void studentRecords();
-        int reg_No[3];
-        char name1[50],name2[50],name3[50];
-        char DOB1[50],DOB2[50],DOB3[50];
+    printf("SL.No \t\t Name \t\t Register Number \t\t Branch\n");
+    printf("---------------------------------------------------------------------------\n");
+    for(int i=0;i<15;i++)
+    {
+        printf("%d \t\t %s \t\t\t %d \t\t\t %s\n",Student[i].sl_No,Student[i].name,Student[i].reg_no,Student[i].branch);
+    }
+    return 0;
+}
 
-        printf("Enter Register Number of the student: \n");
-        scanf("%d\n",&r); //r is the register number
+//user defined function to search for a particular student using their name
+int searchStudent()
+{
+    char sName[50];
+    printf("Enter Name of the student: ");
+    scanf("%s",sName);
 
-        switch(r)
+    for(int i=0;i<15;i++)
+    {
+        if(strcmp(Student[i].name,sName)==0)
         {
-            if(r==1)
-            {
-                studentRecords();
-                printf("Student 1:\n \n Name of the student: %s \n Registration NO: %d \n DOB : %s\n------------------\n",name1,reg_No[0],DOB1);
-
-            }
-            else if(r==2)
-            {
-                studentRecords();
-                printf("Student 2:\n \n Name of the student: %s \n Registration NO: %d \n DOB : %s\n------------------\n",name2,reg_No[2],DOB2);
-
-            }
-            else if(r==3)
-            {
-                studentRecords();
-                printf("Student 3:\n \n Name of the student: %s \n Registration NO: %d \n DOB : %s\n------------------\n",name3,reg_No[2],DOB3);
-
-            }
-            else
-            {
-                printf("Enter a valid Register number\n");
-            }
-
-
+            printf("\nName of the student: %s\n",Student[i].name);
+            printf("Register Number of the student: %d\n",Student[i].reg_no);
+            printf("Branch: %s\n",Student[i].branch);
         }
-
+    }
 }
-
