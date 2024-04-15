@@ -25,7 +25,7 @@ int searchStudent()
             break;
         }
     }
-    if(!found)
+    if(found==0)
     {
         printf("Student data not found");
     }

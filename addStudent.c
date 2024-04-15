@@ -9,11 +9,11 @@ int addStudent() {
     int student=15;
     printf("Enter details of the new student:\n");
     printf("Name: ");
-    scanf("%s", Student[student].name); // Assuming name is a string without spaces
+    scanf("%s", Student[student].name);
     printf("Registration Number: ");
     scanf("%d", &Student[student].reg_no);
     printf("Branch: ");
-    scanf("%s", Student[student].branch); // Assuming branch is a string without spaces
+    scanf("%s", Student[student].branch);
     student++;
 
     printf("Student record added successfully.\n");
