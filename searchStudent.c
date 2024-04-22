@@ -11,23 +11,33 @@ int searchStudent()
     printf("Enter Name of the student: ");
     scanf("%s",sName);
 
-    char name;
+    FILE *file = fopen(FILENAME,"r");
 
     int found=0;
+
     for(int i=0;i<15;i++)
     {
-        if(strcmp(Student[i].name,sName)==0)
+        fscanf(file,"\nName of the student: %s\n",Student[i].name);
+        fscanf(file,"Register Number of the student: %d\n",&Student[i].reg_no);
+        fscanf(file,"Age: %d",&Student[i].age);
+        fscanf(file,"Branch: %s\n",Student[i].branch);
+
+        if(strcmp(Student[i].name,sName) == 0)
         {
             printf("\nName of the student: %s\n",Student[i].name);
             printf("Register Number of the student: %d\n",Student[i].reg_no);
+            printf("Age: %d",Student[i].age);
             printf("Branch: %s\n",Student[i].branch);
             found=1;
             break;
         }
+
     }
-    if(found==0)
+    fclose(file);
+    if(!found)
     {
         printf("Student data not found");
     }
+    return found;
 }
 

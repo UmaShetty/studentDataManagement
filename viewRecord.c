@@ -2,15 +2,28 @@
 #include <string.h>
 #include "sdm.h"
 
-struct student Student[15];
 
 int viewRecord()
 {
-    printf("SL.No \t\t Name \t\t Register Number \t\t Branch\n");
-    printf("---------------------------------------------------------------------------\n");
+    FILE *file = fopen(FILENAME, "a");
+
+
+    fprintf(file,"STUDENT DETAILS\n");
     for(int i=0;i<15;i++)
     {
-        printf("%d \t\t %s \t\t\t %d \t\t\t %s\n",Student[i].sl_No,Student[i].name,Student[i].reg_no,Student[i].branch);
+        fprintf(file,"\nName of the student: %s\n",Student[i].name);
+        fprintf(file,"Register Number of the student: %d\n",Student[i].reg_no);
+        fprintf(file,"Age: %d\n",Student[i].age);
+        fprintf(file,"Branch: %s\n",Student[i].branch);
+        fprintf(file,"\n");
+        printf("\nName of the student: %s\n",Student[i].name);
+        printf("Register Number of the student: %d\n",Student[i].reg_no);
+        printf("Age: %d\n",Student[i].age);
+        printf("Branch: %s\n",Student[i].branch);
+        printf("\n");
     }
+
+    fclose(file);
+
     return 0;
 }
