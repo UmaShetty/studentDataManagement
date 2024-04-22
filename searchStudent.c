@@ -11,7 +11,7 @@ int searchStudent()
     printf("Enter Name of the student: ");
     scanf("%s",sName);
 
-    FILE *file = fopen(FILENAME,"r");
+    FILE *file = fopen("Data.txt","r");
 
     int found=0;
 

@@ -7,37 +7,29 @@ struct Student {
     int reg_no;
     int age;
     char branch[50];
-};
+}s;
 
 // Function to add a new student record
 int addStudent()
 {
-    int num;
-
-    FILE *file = fopen(FILENAME, "a");
-
-    int count = countStudent();
-    printf("\n");
-
-    struct Student newStudent;
+    FILE *file = fopen("Data.txt", "a");
 
     printf("Enter details of the new student:\n");
 
-    printf("slNo: %d\n",count+1);
-
     printf("Name: ");
-    scanf("%s\n", newStudent.name);
-
+    fgets(s.name,sizeof(s.name),stdin);
     printf("Registration Number: ");
-    scanf("%d\n", &newStudent.reg_no);
-
+    scanf("%d",&s.reg_no);
     printf("Age: ");
-    scanf("%d\n", &newStudent.age);
-
+    scanf("%d",&s.age);
     printf("Branch: ");
-    scanf("%s\n", newStudent.branch);
+    scanf("%s",s.branch);
 
-    fprintf(file, "%s %d %d %s\n", newStudent.name, newStudent.reg_no, newStudent.age, newStudent.branch);
+
+    fprintf(file, "Name of the student: %s \n", s.name);
+    fprintf(file, "Register Number: %s \n", s.reg_no);
+    fprintf(file, "Age: %d \n", s.age);
+    fprintf(file, "Branch: %s \n", s.branch);
 
     printf("Student record added successfully.\n");
 

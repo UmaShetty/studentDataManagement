@@ -43,7 +43,7 @@ int main()
             break;
             default:printf("Invalid Choice.Please enter a valid option.\n");
         }
-    }while(choice!=6);
+    }while(choice!=7);
 
     return 0;
 }

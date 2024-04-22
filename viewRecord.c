@@ -5,7 +5,7 @@
 
 int viewRecord()
 {
-    FILE *file = fopen(FILENAME, "a");
+    FILE *file = fopen("Data.txt", "a");
 
 
     fprintf(file,"STUDENT DETAILS\n");
