@@ -23,6 +23,8 @@ int viewRecord()
         printf("\n");
     }
 
+    //file = fopen("Data.txt", "a");
+
     fclose(file);
 
     return 0;

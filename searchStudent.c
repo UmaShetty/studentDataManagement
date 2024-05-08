@@ -26,7 +26,7 @@ int searchStudent()
         {
             printf("\nName of the student: %s\n",Student[i].name);
             printf("Register Number of the student: %d\n",Student[i].reg_no);
-            printf("Age: %d",Student[i].age);
+            printf("Age: %d\n",Student[i].age);
             printf("Branch: %s\n",Student[i].branch);
             found=1;
             break;
