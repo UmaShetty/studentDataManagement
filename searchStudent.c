@@ -2,8 +2,7 @@
 #include <string.h>
 #include "sdm.h"
 
-struct student Student[15];
-
+struct student Student[Max_students];
 //user defined function to search for a particular student using their name
 int searchStudent()
 {
@@ -34,6 +33,7 @@ int searchStudent()
 
     }
     fclose(file);
+
     if(!found)
     {
         printf("Student data not found");

@@ -3,7 +3,6 @@
 #include "viewRecord.c"
 #include "searchStudent.c"
 #include "addStudent.c"
-#include "countStudent.c"
 
 
 //main function to display menu options
@@ -13,18 +12,15 @@ int main()
     printf("STUDENT DATABASE MANAGEMENT\n");
     printf("---------------------------\n");
 
-    printf("1.Student Records\n");
+    printf("1.View Student Records\n");
     printf("2.Search for a student\n");
     printf("3.Add a Student\n");
-    printf("4.Delete a Record\n");
-    printf("5.Update Details\n");
-    printf("6.Count the number of students\n");
-    printf("7.Exit\n");
+    printf("4.Exit\n");
 
 
     do{
 
-        printf("\nEnter your choice :\n");
+        printf("\n\nEnter your choice :\n");
         scanf("%d",&choice);
 
         switch(choice)
@@ -35,15 +31,11 @@ int main()
             break;
             case 3:addStudent();
             break;
-            case 4://deleteRecord();
-            break;
-            case 5://updateRecord();
-            break;
-            case 6:countStudent();
+            case 4:printf("......Exiting the Program.......\n");
             break;
             default:printf("Invalid Choice.Please enter a valid option.\n");
         }
-    }while(choice!=7);
+    }while(choice!=4);
 
     return 0;
 }
