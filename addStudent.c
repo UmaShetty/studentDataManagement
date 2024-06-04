@@ -17,7 +17,7 @@ int addStudent()
 
     if (file == NULL) {
         printf("Error opening file.\n");
-        free(Student1); // Free allocated memory on error
+        free(Student); // Free allocated memory on error
         return 1;
     }
 
