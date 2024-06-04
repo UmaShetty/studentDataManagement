@@ -19,7 +19,7 @@ int viewRecord()
 
     for (int i = 0; i < 15; i++)
     {
-        struct student *s1 = &Student[i]; // Pointer to current student
+        struct student *s1 = &Student[i];
 
         fprintf(file, "\nName of the student: %s\n", s1->name);
         fprintf(file, "Register Number of the student: %d\n", s1->reg_no);
@@ -31,9 +31,9 @@ int viewRecord()
         printf("Register Number of the student: %d\n", s1->reg_no);
         printf("Age: %d\n", s1->age);
         printf("Branch: %s\n", s1->branch);
+        printf("_______________________________________\n");
         printf("\n");
     }
-    fclose(file);
 
     return 0;
 }

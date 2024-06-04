@@ -3,7 +3,8 @@
 #include <string.h>
 #include "sdm.h"
 
-int addStudent() {
+int addStudent()
+{
 
     struct student *Student = (struct student *)malloc(Max_students * sizeof(struct student)); // Allocate memory for the new student
 
@@ -16,7 +17,7 @@ int addStudent() {
 
     if (file == NULL) {
         printf("Error opening file.\n");
-        free(Student); // Free allocated memory on error
+        free(Student1); // Free allocated memory on error
         return 1;
     }
 
@@ -30,9 +31,9 @@ int addStudent() {
     scanf("%d", &Student->reg_no);
 
     printf("Age: ");
-    scanf("%d", &Student->age);  // Corrected to read integer for age
+    scanf("%d", &Student->age);
 
-    printf("Branch enrolled: ");
+    printf("Branch: ");
     scanf("%s", Student->branch);
 
     printf("\nStudent record added successfully.\n");
@@ -42,8 +43,17 @@ int addStudent() {
     fprintf(file, "Age: %d\n", Student->age);
     fprintf(file, "Branch: %s\n", Student->branch);
     fprintf(file, "\n");
-    fclose(file);
 
+    printf("\nSTUDENT ADDED\n");
+    printf("___________________\n");
+    printf("\nName of the student: %s\n", Student->name);
+    printf("Register Number of the student: %d\n", Student->reg_no);
+    printf("Age: %d\n", Student->age);
+    printf("Branch: %s\n", Student->branch);
+    printf("___________________\n");
+    printf("\n");
+
+    fclose(file);
 
     return 0;
 }

@@ -3,6 +3,7 @@
 #include "sdm.h"
 
 struct student Student[Max_students];
+
 //user defined function to search for a particular student using their name
 int searchStudent()
 {
@@ -21,6 +22,7 @@ int searchStudent()
         fscanf(file,"Age: %d",&Student[i].age);
         fscanf(file,"Branch: %s\n",Student[i].branch);
 
+        //Compares entered name with existing data
         if(strcmp(Student[i].name,sName) == 0)
         {
             printf("\nName of the student: %s\n",Student[i].name);
