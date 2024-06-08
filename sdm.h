@@ -5,20 +5,20 @@
 #include <stdio.h>
 
 struct student{
-    int sl_No; //serial number
     char name[50]; //name of the student
     int reg_no; //register number of the student
     int age;
     char branch[50];//course enrolled
 };
 
-struct student Student[Max_students] = {{1,"stdA",01,20,"CSE"},{2,"stdB",02,21,"CSE"},{3,"stdC",03,20,"ECE"},{4,"stdD",04,19,"CSE"},
-{5,"stdE",05,20,"ECE"},{6,"stdF",06,21,"CSE"},{7,"stdG",07,21,"ECE"},{0x8,"stdH",0x8,20,"CSE"},
-{0x9,"stdI",0x9,19,"CSE"},{0xA,"stdJ",0xA,20,"EEE"},{0xB,"stdK",0xB,21,"ECE"},{0XC,"stdL",0xC,20,"CSE"},
-{0xD,"stdM",0xD,19,"ECE"},{0xE,"stdN",0xE,21,"ECE"},{0xF,"stdO",0xF,22,"CSE"}};
+struct student Student[Max_students] = {{"stdA",01,20,"CSE"},{"stdB",02,21,"CSE"},{"stdC",03,20,"ECE"},{"stdD",04,19,"CSE"},
+{"stdE",05,20,"ECE"},{"stdF",06,21,"CSE"},{"stdG",07,21,"ECE"},{"stdH",0x8,20,"CSE"},
+{"stdI",0x9,19,"CSE"},{"stdJ",0xA,20,"EEE"},{"stdK",0xB,21,"ECE"},{"stdL",0xC,20,"CSE"},
+{"stdM",0xD,19,"ECE"},{"stdN",0xE,21,"ECE"},{"stdO",0xF,22,"CSE"}};
 
 int viewRecord();
 int searchStudent();
 int addStudent();
+void deleteRecord();
 
 #endif
